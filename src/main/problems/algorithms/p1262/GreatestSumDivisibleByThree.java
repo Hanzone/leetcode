@@ -40,11 +40,19 @@ public class GreatestSumDivisibleByThree {
             }
         }
 
-        if (sum % 3 == 1 && leftOne1 < MAX) {
-            sum -= Math.min(leftOne1, leftTwo1 + leftTwo2);
+        if (sum % 3 == 1) {
+            if (leftOne1 < MAX || (leftTwo1 < MAX && leftTwo2 < MAX)) {
+                sum -= Math.min(leftOne1, leftTwo1 + leftTwo2);
+            } else {
+                sum = 0;
+            }
         }
-        if (sum % 3 == 2 && leftTwo1 < MAX) {
-            sum -= Math.min(leftTwo1, leftOne1 + leftOne2);
+        if (sum % 3 == 2) {
+            if (leftTwo1 < MAX || (leftOne1 < MAX && leftOne2 < MAX)) {
+                sum -= Math.min(leftTwo1, leftOne1 + leftOne2);
+            } else {
+                sum = 0;
+            }
         }
 
         return sum;
