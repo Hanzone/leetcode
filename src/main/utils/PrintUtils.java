@@ -1,8 +1,14 @@
 package utils;
 
+import static java.lang.System.out;
+
 public class PrintUtils {
 
     private static final String space = "      ";
+
+    public static void print(Object o) {
+        out.println(o);
+    }
 
     /**
      * 竖向打印二叉树
@@ -16,7 +22,7 @@ public class PrintUtils {
     private static void print(TreeNode node, int deep) {
         if (node == null) {
             printSpace(deep);
-            System.out.println("#");
+            out.println("#");
             return;
         }
         print(node.right, deep + 1);
@@ -27,7 +33,7 @@ public class PrintUtils {
 
     private static void printSpace(int count) {
         for (int i = 0; i < count; i++) {
-            System.out.printf(space);
+            out.printf(space);
         }
     }
 
@@ -37,7 +43,7 @@ public class PrintUtils {
         for (int i = 0; i < spaceNum; i++) {
             res.append(" ");
         }
-        System.out.println(res);
+        out.println(res);
     }
 
 }
