@@ -18,6 +18,11 @@ import static utils.PrintUtils.print;
  */
 public class MaximumSubarray {
 
+    /**
+     * using dp solution
+     * @param nums given integer array nums
+     * @return contiguous subarray's sum
+     */
     public int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -26,7 +31,7 @@ public class MaximumSubarray {
             return nums[0];
         }
 
-        // dp[i] means value value end with nums[i];
+        // dp[i] means maxSubArray value end with nums[i];
         int[] dp = new int[nums.length];
         dp[0] = nums[0];
         // max means maxSubArray value
