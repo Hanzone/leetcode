@@ -19,10 +19,24 @@ public class PrintUtils {
         print(root, 0);
     }
 
+    public static void print(ListNode listNode) {
+        if (listNode == null) {
+            print("null");
+            return;
+        }
+        StringBuilder sb = new StringBuilder(String.valueOf(listNode.val));
+        ListNode p = listNode.next;
+        while (p != null) {
+            sb.append("->").append(p.val);
+            p = p.next;
+        }
+        print(sb);
+    }
+
     private static void print(TreeNode node, int deep) {
         if (node == null) {
             printSpace(deep);
-            out.println("#");
+            print("#");
             return;
         }
         print(node.right, deep + 1);
@@ -43,7 +57,7 @@ public class PrintUtils {
         for (int i = 0; i < spaceNum; i++) {
             res.append(" ");
         }
-        out.println(res);
+        print(res);
     }
 
 }
