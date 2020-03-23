@@ -1,11 +1,8 @@
 package problems.algorithms.p217;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import static utils.PrintUtils.print;
 import static utils.PrintUtils.print;
 /**
  * Given an array of integers, find if the array contains any duplicates.
@@ -52,6 +49,5 @@ public class ContainsDuplicate {
         print(containsDuplicate.containsDuplicate(new int[]{1, 2, 3, 4}));
         print(containsDuplicate.containsDuplicate(new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2}));
     }
-
 
 }
