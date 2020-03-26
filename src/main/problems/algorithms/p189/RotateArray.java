@@ -30,17 +30,16 @@ import static utils.PrintUtils.print;
 public class RotateArray {
 
     public void rotate(int[] nums, int k) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length == 0 || (k = k % nums.length) == 0) {
             return;
         }
-        k = k % nums.length;
-        reverseArray(nums, 0, k);
-        reverseArray(nums, k + 1, nums.length - 1);
+        reverseArray(nums, 0, nums.length - k - 1);
+        reverseArray(nums, nums.length - k, nums.length - 1);
         reverseArray(nums, 0, nums.length - 1);
     }
 
     private void reverseArray(int[] nums, int left, int right) {
-        for (int i = 0; i < (right - left) / 2; i++) {
+        for (int i = 0; i < (right - left + 1) / 2; i++) {
             int temp = nums[left + i];
             nums[left + i] = nums[right - i];
             nums[right - i] = temp;
@@ -55,6 +54,10 @@ public class RotateArray {
         int[] t2 = new int[]{-1, -100, 3, 99};
         new RotateArray().rotate(t2, 2);
         print(Arrays.stream(t2).boxed().collect(Collectors.toList()));
+
+        int[] t3 = new int[]{1, 2};
+        new RotateArray().rotate(t3, 1);
+        print(Arrays.stream(t3).boxed().collect(Collectors.toList()));
     }
 
 }
