@@ -60,4 +60,8 @@ public class PrintUtils {
         print(res);
     }
 
+    public static void printAnswerAndExpect(Object answer, Object expect) {
+        print("Answer is: " + answer + "  Expect: " + expect);
+    }
+
 }
