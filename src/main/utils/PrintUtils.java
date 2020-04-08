@@ -61,7 +61,8 @@ public class PrintUtils {
     }
 
     public static void printAnswerAndExpect(Object answer, Object expect) {
-        print("Answer is: " + answer + "  Expect: " + expect);
+        print("Answer is: " + answer);
+        print("Expect is: " + expect);
     }
 
 }
