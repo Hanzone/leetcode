@@ -60,7 +60,7 @@ public class LetterCombinationsOfAPhoneNumber {
     public static void main(String[] args) {
         LetterCombinationsOfAPhoneNumber letterCombinationsOfAPhoneNumber = new LetterCombinationsOfAPhoneNumber();
         List<String> res = letterCombinationsOfAPhoneNumber.letterCombinations("23");
-        List<String> expect = new ArrayList<>(Arrays.asList("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"));
+        List<String> expect = Arrays.asList("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf");
         printAnswerAndExpect(res, expect);
     }
 }
