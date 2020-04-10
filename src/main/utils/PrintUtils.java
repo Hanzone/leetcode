@@ -1,5 +1,8 @@
 package utils;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import static java.lang.System.out;
 
 public class PrintUtils {
@@ -51,4 +54,15 @@ public class PrintUtils {
         print("Expect is: " + expect);
     }
 
+    public static void printAnswerAndExpect(int[] answer, int[] expect) {
+        print("Answer is: " + Arrays.stream(answer).boxed().collect(Collectors.toList()));
+        print("Expect is: " + Arrays.stream(expect).boxed().collect(Collectors.toList()));
+    }
+
+    public static void printAnswerAndExpect(int[][] answer, int[][] expect) {
+        print("Answer is: " + Arrays.stream(answer)
+                .map(ints -> Arrays.stream(ints).boxed().collect(Collectors.toList())).collect(Collectors.toList()));
+        print("Expect is: " + Arrays.stream(expect)
+                .map(ints -> Arrays.stream(ints).boxed().collect(Collectors.toList())).collect(Collectors.toList()));
+    }
 }
