@@ -1,11 +1,11 @@
 package problems.algorithms.p78;
 
-import utils.PrintUtils;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import static utils.PrintUtils.printAnswerAndExpect;
 
 /**
  * Given a set of distinct integers, nums, return all possible subsets (the power set).
@@ -69,7 +69,7 @@ public class Subsets {
         expect.add(Arrays.asList(1, 3));
         expect.add(Arrays.asList(2, 3));
         expect.add(Arrays.asList(1, 2, 3));
-        PrintUtils.printAnswerAndExpect(answer, expect);
+        printAnswerAndExpect(answer, expect);
     }
 
 }

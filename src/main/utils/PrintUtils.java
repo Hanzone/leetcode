@@ -13,6 +13,15 @@ public class PrintUtils {
         out.println(o);
     }
 
+    public static void print(int[] o) {
+        print(Arrays.stream(o).boxed().collect(Collectors.toList()));
+    }
+
+    public static void print(int[][] o) {
+        print(Arrays.stream(o).map(ints -> Arrays.stream(ints).boxed().collect(Collectors.toList()))
+                .collect(Collectors.toList()));
+    }
+
     /**
      * 竖向打印二叉树
      *
