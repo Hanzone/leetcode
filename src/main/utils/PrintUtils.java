@@ -58,6 +58,13 @@ public class PrintUtils {
         print(res);
     }
 
+    public static void printAnswerAndExpect(TreeNode answer, TreeNode expect) {
+        print("Answer is: ");
+        print(answer);
+        print("Expect is: ");
+        print(expect);
+    }
+
     public static void printAnswerAndExpect(Object answer, Object expect) {
         print("Answer is: " + answer);
         print("Expect is: " + expect);
